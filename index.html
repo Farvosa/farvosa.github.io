@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Farvosa Scoop Shop</title><style>
+body{
+    font-family: Arial, sans-serif;
+    background: #ffe6f2;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    padding: 30px;
+}
+
+h1{
+    color: #d63384;
+}
+
+p{
+    color: #444;
+    font-size: 18px;
+}
+
+.product-img{
+    width: 320px;
+    max-width: 90%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+select{
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 15px;
+}
+
+button{
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #b8206a;
+}
+</style></head><body><div class="container"><h1>🌸 Welcome to Farvosa Scoop Shop 🌸</h1><p>Discover your mystery surprise box full of cute and joyful items. Choose your scoop and color, and let the surprise begin ✨</p><img src="product.jpg" class="product-img"><br><select id="scoopSelect" onchange="updatePrice()">
+<option value="0">Choose your Scoop</option>
+<option value="32">1 Scoop + 1 Gift — 32€</option>
+<option value="55">2 Scoops + 2 Gifts — 55€</option>
+<option value="75">3 Scoops + 3 Gifts — 75€</option>
+<option value="95">4 Scoops + 4 Gifts — 95€</option>
+<option value="120">5 Scoops + 5 Gifts + 1 Gacha — 120€</option>
+<option value="145">6 Scoops + 6 Gifts + 2 Gacha — 145€</option>
+</select><form id="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
+<input type="hidden" name="currency_code" value="EUR">
+<input type="hidden" name="amount" id="priceInput" value="0"><button type="submit">💝 Buy Now</button>
+
+</form></div><script>
+function updatePrice(){
+let select = document.getElementById("scoopSelect");
+let price = select.value;
+document.getElementById("priceInput").value = price;
+}
+</script></body>
+</html>
