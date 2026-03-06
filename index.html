@@ -3,9 +3,9 @@ body{
 font-family: "Brush Script MT", cursive;
 }
 </style>
+
 <!DOCTYPE html>
 <html lang="en">
-  
 
 <head>
 <meta charset="UTF-8">
@@ -65,6 +65,7 @@ font-size:18px;
 border-radius:15px;
 margin-top:20px;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
@@ -74,7 +75,6 @@ background:#b8206a;
 </style>
 </head>
 
-
 <body>
 
 <div class="container">
@@ -83,10 +83,6 @@ background:#b8206a;
 
 <p>
 ✨ Welcome to Farvosa Mystery Scoop Shop 💕
-
-Our scoop boxes are surprise gift experiences filled with carefully selected cute items 🎀 Each box is prepared with love to bring you happiness and excitement when opening it!
-
-Please remember that this is a mystery surprise box. The exact contents inside are chosen by us and may vary. Returns are only accepted if the product is defective after delivery 🌸
 </p>
 
 <img src="product.jpg" class="product-img">
@@ -98,32 +94,33 @@ Please remember that this is a mystery surprise box. The exact contents inside a
 <option value="0">Choose your Scoop</option>
 
 <option value="31.99">1 Scoop + 1 Gift</option>
-
 <option value="63.98">2 Scoops + 2 Gifts</option>
-
 <option value="95.97">3 Scoops + 3 Gifts</option>
-
 <option value="127.96">4 Scoops + 4 Gifts</option>
-
 <option value="159.95">5 Scoops + 5 Gifts + 1 Gacha</option>
-
 <option value="191.94">6 Scoops + 6 Gifts + 2 Gacha</option>
 
 </select>
 
 <div class="price" id="priceText">Price: —</div>
 
+<p style="color:#d63384;font-weight:bold;">
+⚠️ Delivery is available only within Germany 🇩🇪<br>
+For delivery outside Germany, please contact us via email before placing an order ✉️
+</p>
+
+<p style="color:#444;font-size:14px;">
+📦 Please write your correct delivery address inside the PayPal payment notes after completing the order.<br>
+Orders cannot be processed without a valid European delivery address.
+</p>
+
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
 <input type="hidden" name="cmd" value="_xclick">
-
 <input type="hidden" name="business" value="mahmoud.arbash@gmx.de">
-
 <input type="hidden" name="currency_code" value="EUR">
-
 <input type="hidden" name="amount" id="priceInput" value="0">
 
-  
 <br><br>
 
 <h3>✨Gift Details✨</h3>
@@ -133,7 +130,7 @@ Please remember that this is a mystery surprise box. The exact contents inside a
 <input type="number" placeholder="Age of the recipient 🎂" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
 
 <br><br>
-  
+
 <h3>✨Your Preferences✨</h3>
 
 <input type="text" placeholder="Favorite color 🎨 (optional)" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
@@ -152,13 +149,9 @@ Please remember that this is a mystery surprise box. The exact contents inside a
 
 <button type="submit">💝 Buy Now</button>
 
-
-
-
 </form>
 
 </div>
-
 
 <script>
 
@@ -178,7 +171,6 @@ document.getElementById("priceText").innerHTML = "Price: —";
 }
 
 </script>
-
 
 </body>
 </html>
