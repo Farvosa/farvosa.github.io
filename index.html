@@ -1,81 +1,75 @@
-<style>
-body{
-font-family: "Brush Script MT", cursive;
-}
-
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <title>Farvosa Scoop Shop</title>
-
 <style>
-
 body{
-font-family: Arial, sans-serif;
-background:#ffe6f2;
-text-align:center;
-margin:0;
-padding:0;
+  font-family: Arial, sans-serif;
+  background:#ffe6f2;
+  text-align:center;
+  margin:0;
+  padding:0;
 }
-
 .container{
-padding:30px;
+  padding:30px;
 }
-
 h1{
-color:#d63384;
+  color:#d63384;
 }
-
 p{
-color:#444;
-font-size:18px;
+  color:#444;
+  font-size:18px;
 }
-
 .product-img{
-width:320px;
-max-width:90%;
-border-radius:20px;
-margin-bottom:20px;
+  width:320px;
+  max-width:90%;
+  border-radius:20px;
+  margin-bottom:20px;
 }
-
 select{
-padding:12px;
-font-size:16px;
-border-radius:10px;
-border:none;
-margin-top:15px;
+  padding:12px;
+  font-size:16px;
+  border-radius:10px;
+  border:none;
+  margin-top:15px;
 }
-
 .price{
-font-size:22px;
-margin-top:15px;
-color:#d63384;
-font-weight:bold;
+  font-size:22px;
+  margin-top:15px;
+  color:#d63384;
+  font-weight:bold;
 }
-
 button{
-background:#d63384;
-color:white;
-border:none;
-padding:15px 25px;
-font-size:18px;
-border-radius:15px;
-margin-top:20px;
-cursor:pointer;
-transition:0.3s;
+  background:#d63384;
+  color:white;
+  border:none;
+  padding:15px 25px;
+  font-size:18px;
+  border-radius:15px;
+  margin-top:20px;
+  cursor:pointer;
 }
-
 button:hover{
-background:#b8206a;
+  background:#b8206a;
 }
-
+input, textarea{
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  margin:5px;
+  width:260px;
+}
+textarea{
+  height:90px;
+}
+.info-text{
+  color:#b8206a;
+  font-size:16px;
+  margin-top:10px;
+}
 </style>
 </head>
-
 <body>
 
 <div class="container">
@@ -83,10 +77,8 @@ background:#b8206a;
 <h1>🌸 Welcome to Farvosa Scoop Shop 🌸</h1>
 
 <p>
-✨ Welcome to Farvosa Mystery Scoop Shop 💕
-
-Our scoop boxes are surprise gift experiences filled with carefully selected cute items 🎀 Each box is prepared with love to bring you happiness and excitement when opening it!
-
+✨ Welcome to Farvosa Mystery Scoop Shop 💕<br>
+Our scoop boxes are surprise gift experiences filled with carefully selected cute items 🎀 Each box is prepared with love to bring you happiness and excitement when opening it!<br>
 Please remember that this is a mystery surprise box. The exact contents inside are chosen by us and may vary. Returns are only accepted if the product is defective after delivery 🌸
 </p>
 
@@ -95,86 +87,64 @@ Please remember that this is a mystery surprise box. The exact contents inside a
 <br>
 
 <select id="scoopSelect" onchange="updatePrice()">
-
-<option value="0">Choose your Scoop</option>
-
-<option value="31.99">1 Scoop + 1 Gift</option>
-<option value="63.98">2 Scoops + 2 Gifts</option>
-<option value="95.97">3 Scoops + 3 Gifts</option>
-<option value="127.96">4 Scoops + 4 Gifts</option>
-<option value="159.95">5 Scoops + 5 Gifts + 1 Gacha</option>
-<option value="191.94">6 Scoops + 6 Gifts + 2 Gacha</option>
-
+<option value="0+0">Choose your Scoop</option>
+<option value="31.99+5.99">1 Scoop + 1 Gift + Shipping Germany 5,99€</option>
+<option value="63.98+5.99">2 Scoops + 2 Gifts + Shipping Germany 5,99€</option>
+<option value="95.97+5.99">3 Scoops + 3 Gifts + Shipping Germany 5,99€</option>
+<option value="127.96+5.99">4 Scoops + 4 Gifts + Shipping Germany 5,99€</option>
+<option value="159.95+5.99">5 Scoops + 5 Gifts + 1 Gacha + Shipping Germany 5,99€</option>
+<option value="191.94+14.99">6 Scoops + 6 Gifts + 2 Gacha + Shipping Europe 14,99€</option>
 </select>
 
 <div class="price" id="priceText">Price: —</div>
 
-<p style="color:#d63384;font-weight:bold;">
+<div class="info-text">
 ⚠️ Delivery is available only within Germany 🇩🇪<br>
-For delivery outside Germany, please contact us via email before placing an order ✉️
-</p>
-
-<p style="color:#444;font-size:14px;">
+For delivery outside Germany, please contact us via email before placing an order ✉️<br>
 📦 Please write your correct delivery address inside the PayPal payment notes after completing the order.<br>
 Orders cannot be processed without a valid European delivery address.
-</p>
+</div>
 
-<form action="https://formspree.io/f/abcdwxyz" method="POST">
-
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_xclick">
 <input type="hidden" name="business" value="mahmoud.arbash@gmx.de">
 <input type="hidden" name="currency_code" value="EUR">
 <input type="hidden" name="amount" id="priceInput" value="0">
 
-<br><br>
-
 <h3>✨Gift Details✨</h3>
-
-<input type="text" name="name" placeholder="Name of the gift recipient 🎁" required style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
-  
-<input type="number" name="age" placeholder="Age of the recipient 🎂" required style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
-  
-<br><br>
+<input type="text" name="recipientName" placeholder="Name of the gift recipient 🎁" required><br>
+<input type="number" name="age" placeholder="Age of the recipient 🎂" required><br>
 
 <h3>✨Your Preferences✨</h3>
-
-<input type="text" placeholder="Favorite color 🎨 (optional)" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
-
-<input type="text" placeholder="Favorite character 💖 (optional)" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
-
-<input type="text" placeholder="Nail size 💅 (optional)" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
-
-<input type="text" placeholder="Ring size 💍 (optional)" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
-
-<input type="text" placeholder="Foot size 👟 (optional)" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;"><br>
-
-<textarea placeholder="Tell us your wishes for the box 💌" style="padding:10px;border-radius:10px;border:none;margin:5px;width:260px;height:90px;"></textarea>
+<input type="text" name="favoriteColor" placeholder="Favorite color 🎨 (optional)"><br>
+<input type="text" name="favoriteCharacter" placeholder="Favorite character 💖 (optional)"><br>
+<input type="text" name="nailSize" placeholder="Nail size 💅 (optional)"><br>
+<input type="text" name="ringSize" placeholder="Ring size 💍 (optional)"><br>
+<input type="text" name="footSize" placeholder="Foot size 👟 (optional)"><br>
+<textarea name="wishes" placeholder="Tell us your wishes for the box 💌 (optional)"></textarea>
 
 <br><br>
-
 <button type="submit">💝 Buy Now</button>
-
 </form>
 
 </div>
 
 <script>
-
 function updatePrice(){
-
-let select = document.getElementById("scoopSelect");
-let price = select.value;
-
-document.getElementById("priceInput").value = price;
-
-if(price > 0){
-document.getElementById("priceText").innerHTML = "Price: " + price + " €";
-}else{
-document.getElementById("priceText").innerHTML = "Price: —";
+  let select = document.getElementById("scoopSelect");
+  let value = select.value;
+  if(value === "0+0"){
+    document.getElementById("priceText").innerHTML = "Price: —";
+    document.getElementById("priceInput").value = "0";
+    return;
+  }
+  let parts = value.split("+");
+  let price = parseFloat(parts[0]);
+  let shipping = parseFloat(parts[1]);
+  let total = price + shipping;
+  document.getElementById("priceInput").value = total;
+  document.getElementById("priceText").innerHTML = "Price: " + total.toFixed(2) + " €";
 }
-
-}
-
 </script>
 
 </body>
